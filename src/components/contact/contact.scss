@@ -1,0 +1,57 @@
+.contact-section {
+  min-height: 100vh;
+  overflow: hidden;
+  background-image: url(../../assets/img/contact-background.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  & div {
+    background-color: rgba(33, 33, 41, 0.99);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    & h2 {
+      color: white;
+    }
+
+    & form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+
+      & input,
+      & textarea {
+        padding: 1rem;
+        border-radius: 1rem;
+        min-width: 90%;
+        max-width: 90%;
+        font-size: 1.4rem;
+        margin: 2rem 0 !important;
+        background-color: gray;
+        color: white;
+
+        &::placeholder {
+          color: rgb(220, 220, 220);
+        }
+
+        &[type="submit"] {
+          background-color: rgb(220, 220, 220);
+          color: var(--main-color);
+          text-transform: uppercase;
+          letter-spacing: 0.2rem;
+          font-size: 1.8rem;
+        }
+      }
+
+      & textarea {
+        min-height: 18rem;
+        max-height: 23rem;
+      }
+    }
+  }
+}
