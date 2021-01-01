@@ -45,6 +45,19 @@ textarea {
   }
 }
 
+.bounce-btn {
+  transition: transform 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1) !important;
+  }
+
+  &:active {
+    transform: scale(0.9) !important;
+  }
+}
+
 @media screen and (min-width: 800px) {
   .App {
     & h2 {

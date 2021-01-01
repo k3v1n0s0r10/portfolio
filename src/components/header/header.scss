@@ -1,6 +1,7 @@
 header {
   min-height: 100vh;
   background-image: url(../../assets/img/header-background.jpeg);
+  background-attachment: fixed;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -22,6 +23,8 @@ header {
       width: 100%;
 
       & p {
+        flex: 1;
+        text-align: center;
         color: white;
         font-size: 2rem;
       }

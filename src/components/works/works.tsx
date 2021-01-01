@@ -27,6 +27,7 @@ const Works = ({ worksRef }: Refs) => {
               href="https://reservaweb.net"
               rel="nopeener noreferrer"
               target="_blank"
+              className="bounce-btn"
             >
               ver
             </a>
@@ -48,6 +49,7 @@ const Works = ({ worksRef }: Refs) => {
               href="https://mascentigrados.netlify.app"
               rel="nopeener noreferrer"
               target="_blank"
+              className="bounce-btn"
             >
               ver
             </a>

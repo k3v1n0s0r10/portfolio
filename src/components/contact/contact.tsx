@@ -1,4 +1,4 @@
-import React, { FormEvent } from "react";
+import { FormEvent } from "react";
 import { Refs } from "../../@types/types";
 
 import "./contact.scss";
@@ -16,8 +16,8 @@ const Contact = ({ contactRef }: Refs) => {
         <form onSubmit={handleSubmit}>
           <input type="text" placeholder="Nombre: " />
           <input type="email" placeholder="Correo Electronico: " />
-          <textarea placeholder="" />
-          <input type="submit" value="Enviar" />
+          <textarea placeholder="Dejame un mensaje:" />
+          <input type="submit" className="bounce-btn" value="Enviar" />
         </form>
       </div>
     </section>

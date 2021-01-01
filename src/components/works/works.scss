@@ -119,15 +119,6 @@
             grid-row: 1 / 2;
           }
         }
-
-        & .work-info {
-          & a {
-            transition: 0.2s;
-            &:hover {
-              transform: scale(1.1);
-            }
-          }
-        }
       }
     }
   }

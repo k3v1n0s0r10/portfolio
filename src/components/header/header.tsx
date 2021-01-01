@@ -1,4 +1,3 @@
-import React from "react";
 import { Refs } from "../../@types/types";
 
 import "./header.scss";
@@ -12,9 +11,21 @@ const Header = ({ worksRef, projectsRef, contactRef }: Refs) => {
     <header>
       <div>
         <nav>
-          <p onClick={() => handleClickScroll(worksRef)}>Works</p>
-          <p onClick={() => handleClickScroll(projectsRef)}>Projects</p>
-          <p onClick={() => handleClickScroll(contactRef)}>Contact</p>
+          <p className="bounce-btn" onClick={() => handleClickScroll(worksRef)}>
+            Works
+          </p>
+          <p
+            className="bounce-btn"
+            onClick={() => handleClickScroll(projectsRef)}
+          >
+            Projects
+          </p>
+          <p
+            className="bounce-btn"
+            onClick={() => handleClickScroll(contactRef)}
+          >
+            Contact
+          </p>
         </nav>
         <h1>
           Kevin Osorio <br />
