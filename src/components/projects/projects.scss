@@ -1,7 +1,7 @@
 .projects-section {
   min-height: 100vh;
   overflow: hidden;
-  background-image: url(../../assets/img/projects-background.jpg);
+  background-image: url(../../assets/img/laptop.jpg);
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
@@ -9,22 +9,36 @@
 
   .cover {
     overflow: hidden;
-    background-color: rgba(33, 33, 41, 0.99);
+    background-color: rgba(33, 33, 41, 0.89);
     min-height: 100vh;
+    padding-bottom: 10rem;
 
     h2 {
+      margin-top: rem;
       color: white;
     }
 
     .projects-container {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
 
       .project-item {
         height: 20rem;
         width: 20rem;
         background-color: white;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .projects-section {
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+
+    .cover {
+      h2 {
+        margin-top: 10rem;
       }
     }
   }

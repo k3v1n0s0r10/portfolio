@@ -1,5 +1,5 @@
-export interface Refs {
-  worksRef?: React.MutableRefObject<null>;
-  projectsRef?: React.MutableRefObject<null>;
-  contactRef?: React.MutableRefObject<null>;
+export interface ProjectItemInterface {
+  name: string;
+  img: string;
+  description: string;
 }

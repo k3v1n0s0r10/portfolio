@@ -1,27 +1,31 @@
-import { useRef } from "react";
+import { useEffect } from "react";
+import Aos from "aos";
+
+import { ReferencesProvider } from "./context/references";
 
 import Header from "./components/header/header";
 import Works from "./components/works/works";
-
-import "./App.scss";
 import Projects from "./components/projects/projects";
 import Contact from "./components/contact/contact";
 
+import "aos/dist/aos.css";
+import "./App.scss";
+
 function App() {
-  const worksRef = useRef(null);
-  const projectsRef = useRef(null);
-  const contactRef = useRef(null);
+  useEffect(() => {
+    //initialize animation on scroll
+    //the reveal animation works with data-aos in html tags
+    Aos.init({});
+  }, []);
 
   return (
     <div className="App">
-      <Header
-        worksRef={worksRef}
-        projectsRef={projectsRef}
-        contactRef={contactRef}
-      />
-      <Works worksRef={worksRef} />
-      <Projects projectsRef={projectsRef} />
-      <Contact contactRef={contactRef} />
+      <ReferencesProvider>
+        <Header />
+        <Works />
+        <Projects />
+        <Contact />
+      </ReferencesProvider>
     </div>
   );
 }

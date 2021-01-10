@@ -5,73 +5,115 @@ header {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  overflow-x: hidden;
+  overflow: hidden;
 
-  & div {
+  .header-container {
     min-height: 100vh;
     width: 100%;
     padding: 2rem 0;
     display: flex;
     flex-direction: column;
-    background-color: rgba(33, 33, 41, 0.98);
+    background-color: rgba(33, 33, 41, 0.68);
     align-items: center;
     justify-content: space-between;
 
-    & nav {
+    .nav {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: center;
       width: 100%;
 
-      & p {
-        flex: 1;
+      p {
+        margin: 0 1rem;
         text-align: center;
         color: white;
+        font-size: 1.4rem;
+      }
+    }
+
+    .title-container {
+      h1 {
+        color: white;
+        text-align: center;
         font-size: 2rem;
       }
-    }
 
-    & h1 {
-      color: white;
-      text-align: center;
-      font-size: 2rem;
+      .divider-custom {
+        margin: 1.25rem 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
 
-      & span {
+        .divider-custom-line {
+          width: 100%;
+          max-width: 7rem;
+          height: 0.25rem;
+          background-color: white;
+          border-radius: 1rem;
+          border-color: white !important;
+        }
+
+        .divider-custom-icon {
+          font-size: 2rem;
+          color: white;
+        }
+      }
+
+      span {
+        color: white;
+        font-weight: bold;
         font-family: Lobster;
         font-size: 6rem;
+        line-height: 0.7;
+        user-select: none;
       }
     }
 
-    & i {
-      font-size: 2rem;
-      color: white;
+    .header-footer {
+      .fa-github {
+        font-size: 2rem;
+        color: white;
+      }
     }
   }
 }
 
 @media screen and (min-width: 800px) {
   header {
-    & nav {
-      & p {
-        transition: color 1s;
-        &:hover {
-          cursor: pointer;
-          color: gray;
+    clip-path: polygon(0 0%, 100% 0, 100% 90%, 0 100%);
+
+    .header-container {
+      .nav {
+        p {
+          flex: 1;
+          transition: color 1s;
+          font-size: 2rem;
+          :hover {
+            cursor: pointer;
+            color: gray;
+          }
         }
       }
-    }
 
-    & h1 {
-      & span {
-        font-size: 7rem;
+      .title-container {
+        h1 {
+          font-size: 3rem;
+        }
+        span {
+          font-size: 10rem;
+        }
       }
-    }
 
-    & i {
-      font-size: 3rem;
+      .header-footer {
+        .fa-github {
+          font-size: 3rem;
+          margin-bottom: 5rem;
 
-      &:hover {
-        animation-name: github-icon;
-        animation-duration: 1s;
+          &:hover {
+            animation-name: github-icon;
+            animation-duration: 1s;
+          }
+        }
       }
     }
   }

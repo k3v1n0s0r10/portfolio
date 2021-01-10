@@ -1,10 +1,14 @@
-import React, { useState } from "react";
-import { Refs } from "../../@types/types";
+import React, { useContext, useState } from "react";
+
+import { ReferencesContext } from "../../context/references";
+import { ProjectsData } from "../../data/projetcs";
+import ProjectItem from "../projectItem/ProjectItem";
 import ProjectModal from "../projectModal/projectModal";
 
 import "./projects.scss";
 
-const Projects = ({ projectsRef }: Refs) => {
+const Projects: React.FC = () => {
+  const { projectsRef } = useContext(ReferencesContext);
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -13,8 +17,10 @@ const Projects = ({ projectsRef }: Refs) => {
         {showModal && <ProjectModal setShowModal={setShowModal} />}
 
         <h2>My Projects</h2>
-        <div onClick={() => setShowModal(true)} className="projects-container">
-          <div className="project-item bounce-btn"></div>
+        <div className="projects-container">
+          {ProjectsData.map((project, idx) => (
+            <ProjectItem project={project} idx={idx} />
+          ))}
         </div>
       </div>
     </section>

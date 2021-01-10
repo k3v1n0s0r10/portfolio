@@ -1,9 +1,11 @@
-import { FormEvent } from "react";
-import { Refs } from "../../@types/types";
+import { FormEvent, useContext } from "react";
+import { ReferencesContext } from "../../context/references";
 
 import "./contact.scss";
 
-const Contact = ({ contactRef }: Refs) => {
+const Contact: React.FC = () => {
+  const { contactRef } = useContext(ReferencesContext);
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
