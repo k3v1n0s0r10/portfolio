@@ -38,7 +38,10 @@ const Contact: React.FC = () => {
             onChange={handleInputChange}
             required
           />
-          <textarea placeholder="Dejame un mensaje:" />
+          <label htmlFor="userMsg" className="msg-label">
+            Dejame un mensaje:
+          </label>
+          <textarea id="userMsg" />
           <button type="submit" className="bounce-btn">
             Enviar
           </button>

@@ -1,0 +1,66 @@
+.project-item {
+  background-color: white;
+  overflow: hidden;
+  margin: 1rem;
+  height: 50vh;
+  width: 80vw;
+  max-width: 68rem;
+  border-radius: 1rem;
+
+  display: grid;
+  grid-template-rows: 50% 50%;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .project-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+
+    h3 {
+      font-size: 2rem;
+    }
+
+    button {
+      border-radius: 0.5rem;
+      padding: 1rem;
+      width: 100%;
+      color: white;
+      background-color: var(--main-color);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .project-item {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+    height: 30vh;
+    margin: 2rem 0;
+
+    &:last-child {
+      margin-bottom: 10rem;
+    }
+
+    &:nth-child(2n) {
+      flex-direction: row-reverse;
+
+      img {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+
+      .project-item {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+    }
+  }
+}
