@@ -1,10 +1,16 @@
 import { FormEvent, useContext } from "react";
 import { ReferencesContext } from "../../context/references";
+import useForm from "../../hooks/useForm";
+import CustomInput from "../customInput/CustomInput";
 
 import "./contact.scss";
 
 const Contact: React.FC = () => {
   const { contactRef } = useContext(ReferencesContext);
+  const [formData, handleInputChange] = useForm({
+    userName: "",
+    userEmail: "",
+  });
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -12,14 +18,30 @@ const Contact: React.FC = () => {
 
   return (
     <section ref={contactRef} className="contact-section">
-      <div>
+      <div className="form-container">
         <h2>Contact Me</h2>
 
         <form onSubmit={handleSubmit}>
-          <input type="text" placeholder="Nombre: " />
-          <input type="email" placeholder="Correo Electronico: " />
+          <CustomInput
+            type="text"
+            label="Nombre: "
+            name="userName"
+            value={formData.userName}
+            onChange={handleInputChange}
+            required
+          />
+          <CustomInput
+            type="email"
+            label="Email:"
+            name="userEmail"
+            value={formData.userEmail}
+            onChange={handleInputChange}
+            required
+          />
           <textarea placeholder="Dejame un mensaje:" />
-          <input type="submit" className="bounce-btn" value="Enviar" />
+          <button type="submit" className="bounce-btn">
+            Enviar
+          </button>
         </form>
       </div>
     </section>

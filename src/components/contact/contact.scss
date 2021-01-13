@@ -5,7 +5,7 @@
   background-size: cover;
   background-repeat: no-repeat;
 
-  & div {
+  & .form-container {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -23,12 +23,6 @@
       height: 100%;
 
       textarea {
-        min-width: 90%;
-        max-width: 90%;
-      }
-
-      & input,
-      & textarea {
         padding: 1rem;
         border-radius: 1rem;
         width: 90%;
@@ -36,21 +30,12 @@
         margin: 2rem 0 !important;
         background-color: var(--main-color);
         color: white;
+        min-height: 18rem;
+        max-height: 23rem;
 
         &::placeholder {
           color: rgb(220, 220, 220);
         }
-
-        &[type="submit"] {
-          text-transform: uppercase;
-          letter-spacing: 0.2rem;
-          font-size: 1.8rem;
-        }
-      }
-
-      & textarea {
-        min-height: 18rem;
-        max-height: 23rem;
       }
     }
   }
@@ -58,7 +43,7 @@
 
 @media screen and (min-width: 800px) {
   .contact-section {
-    div {
+    .form-container {
       form {
         background-color: white;
         width: 80vw;
@@ -74,7 +59,6 @@
           max-width: 60rem;
         }
 
-        input,
         textarea {
           font-size: 2rem;
           padding: 1rem;
