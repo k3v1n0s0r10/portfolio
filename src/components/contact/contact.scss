@@ -24,8 +24,8 @@
       .msg-label {
         color: var(--main-color);
         width: 100%;
-        font-size: 1.8rem;
-        margin: 2rem 0 0;
+        font-size: 2rem;
+        margin: 3rem 0 0;
       }
 
       textarea {
@@ -34,13 +34,21 @@
         border-radius: 0.5rem;
         font-size: 1.4rem;
         color: gray;
-        border: 0.5px solid var(--main-color);
+        border: 0.5px solid gray;
         min-height: 18rem;
         max-height: 23rem;
         min-width: 100%;
         width: 100%;
         max-width: 100%;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
+
+        &[value=""] {
+          border: 0.5px solid gray;
+        }
+
+        &:focus {
+          border: 2px solid var(--main-color);
+        }
 
         &::placeholder {
           color: rgb(220, 220, 220);

@@ -1,25 +1,41 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext } from "react";
+import { ProjectItemInterface } from "../../@types/types";
+import { ProjectModalContext } from "../../context/projectModal";
 import "./projectModal.scss";
 
-const ProjectModal = ({ setShowModal }: any) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const modalRef = useRef(null);
-
-  useEffect(() => {
-    setIsOpen(true);
-  }, []);
+const ProjectModal: React.FC<{ modalData: ProjectItemInterface }> = ({
+  modalData,
+}) => {
+  const { setModalData } = useContext(ProjectModalContext);
+  const { name, img, description, techs, demo, code } = modalData;
 
   return (
-    <div
-      ref={modalRef}
-      onClick={() => {
-        setIsOpen(false);
-        setTimeout(() => setShowModal(false), 1000);
-      }}
-      className={`project-modal ${isOpen && "open"}`}
-    >
+    <div className="project-modal">
       <div className="modal-container">
-        <h2>modal</h2>
+        <i className="fas fa-times" onClick={() => setModalData(null)} />
+
+        <img src={img} alt={name} />
+        <div className="project-modal-info">
+          <h3>{name}</h3>
+          <p>{description}</p>
+
+          <div className="techs">
+            {techs.map((el, idx) => (
+              <img src={el} alt={"tech " + idx + 1} />
+            ))}
+          </div>
+
+          <div className="buttons ">
+            <a href={demo} target="_blank" className="bounce-btn">
+              Demo
+            </a>
+            {code.map(({ name, link }) => (
+              <a href={link} target="_blank" className="bounce-btn">
+                {name}
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

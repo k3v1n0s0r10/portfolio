@@ -8,6 +8,8 @@ import Works from "./components/works/works";
 import Projects from "./components/projects/projects";
 import Contact from "./components/contact/contact";
 
+import { ProjectModalProvider } from "./context/projectModal";
+
 import "aos/dist/aos.css";
 import "./App.scss";
 
@@ -21,10 +23,12 @@ function App() {
   return (
     <div className="App">
       <ReferencesProvider>
-        <Header />
-        <Works />
-        <Projects />
-        <Contact />
+        <ProjectModalProvider>
+          <Header />
+          <Works />
+          <Projects />
+          <Contact />
+        </ProjectModalProvider>
       </ReferencesProvider>
     </div>
   );

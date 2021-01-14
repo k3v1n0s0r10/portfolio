@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { ProjectItemInterface } from "../../@types/types";
+import { ProjectModalContext } from "../../context/projectModal";
 import RevealDiv from "../RevealDiv";
 
 import "./ProjectItem.scss";
@@ -7,6 +9,7 @@ const ProjectItem: React.FC<{ idx: number; project: ProjectItemInterface }> = ({
   project,
   idx,
 }) => {
+  const { setModalData } = useContext(ProjectModalContext);
   const { name, img, description } = project;
 
   return (
@@ -19,7 +22,9 @@ const ProjectItem: React.FC<{ idx: number; project: ProjectItemInterface }> = ({
       <div className="project-info">
         <h3>{name}</h3>
         <p>{description}</p>
-        <button>ver más</button>
+        <button onClick={() => setModalData(project)} className="bounce-btn">
+          See more
+        </button>
       </div>
     </RevealDiv>
   );

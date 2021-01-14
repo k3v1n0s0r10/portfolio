@@ -24,7 +24,7 @@ const Contact: React.FC = () => {
         <form onSubmit={handleSubmit}>
           <CustomInput
             type="text"
-            label="Nombre: "
+            label="Name: "
             name="userName"
             value={formData.userName}
             onChange={handleInputChange}
@@ -39,11 +39,11 @@ const Contact: React.FC = () => {
             required
           />
           <label htmlFor="userMsg" className="msg-label">
-            Dejame un mensaje:
+            Leave me a message:
           </label>
           <textarea id="userMsg" />
           <button type="submit" className="bounce-btn">
-            Enviar
+            Send
           </button>
         </form>
       </div>
