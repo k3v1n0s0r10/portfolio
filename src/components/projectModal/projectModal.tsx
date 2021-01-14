@@ -21,16 +21,28 @@ const ProjectModal: React.FC<{ modalData: ProjectItemInterface }> = ({
 
           <div className="techs">
             {techs.map((el, idx) => (
-              <img src={el} alt={"tech " + idx + 1} />
+              <img draggable="false" src={el} alt={"tech " + idx + 1} />
             ))}
           </div>
 
           <div className="buttons ">
-            <a href={demo} target="_blank" className="bounce-btn">
+            <a
+              href={demo}
+              target="_blank"
+              rel="noreferrer"
+              className="bounce-btn"
+            >
+              <i className="fas fa-external-link-alt"></i>
               Demo
             </a>
             {code.map(({ name, link }) => (
-              <a href={link} target="_blank" className="bounce-btn">
+              <a
+                href={link}
+                target="_blank"
+                rel="noreferrer"
+                className="bounce-btn"
+              >
+                <i className="fas fa-code" />
                 {name}
               </a>
             ))}

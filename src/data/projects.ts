@@ -11,15 +11,19 @@ import HTMLLogo from "../assets/img/logo-html.png";
 import CSSLogo from "../assets/img/logo-css.png";
 import JSLogo from "../assets/img/logo-js.png";
 import ReactLogo from "../assets/img/logo-react.png";
-import NextLogo from "../assets/img/logo-nextjs.svg";
+//import NextLogo from "../assets/img/logo-nextjs.svg";
+import GraphQLLogo from "../assets/img/logo-graphql.png";
+import SocketIOLogo from "../assets/img/logo-socketio.png";
 import ExpressLogo from "../assets/img/logo-express.png";
+import MongoDBLogo from "../assets/img/logo-mongodb.png";
+//import PostgreSQLLogo from "../assets/img/logo-postgresql.svg";
 
 export const ProjectsData: Array<ProjectItemInterface> = [
   {
     name: "PostMedia",
     img: PostMedia,
     description: "In this app you could die",
-    techs: [ReactLogo],
+    techs: [ReactLogo, ExpressLogo, GraphQLLogo, MongoDBLogo],
     demo: "https://kdev-postmedia.netlify.app/",
     code: [
       {
@@ -36,7 +40,7 @@ export const ProjectsData: Array<ProjectItemInterface> = [
     name: "Realtime Chat",
     img: ChatApp,
     description: "In this app you could die",
-    techs: [HTMLLogo, CSSLogo, ReactLogo, ExpressLogo],
+    techs: [ReactLogo, SocketIOLogo, ExpressLogo],
     demo: "https://kdev-chat.netlify.app/",
     code: [
       {

@@ -43,6 +43,8 @@
     grid-template-columns: 50% 50%;
     grid-template-rows: 100%;
     height: 30vh;
+    min-height: 30rem;
+    min-width: 70rem;
     margin: 2rem 0;
 
     &:last-child {
