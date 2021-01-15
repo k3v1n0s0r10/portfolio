@@ -21,7 +21,12 @@ const ProjectModal: React.FC<{ modalData: ProjectItemInterface }> = ({
 
           <div className="techs">
             {techs.map((el, idx) => (
-              <img draggable="false" src={el} alt={"tech " + idx + 1} />
+              <img
+                key={idx}
+                draggable="false"
+                src={el}
+                alt={"tech " + idx + 1}
+              />
             ))}
           </div>
 
@@ -35,12 +40,13 @@ const ProjectModal: React.FC<{ modalData: ProjectItemInterface }> = ({
               <i className="fas fa-external-link-alt"></i>
               Demo
             </a>
-            {code.map(({ name, link }) => (
+            {code.map(({ name, link }, idx) => (
               <a
                 href={link}
                 target="_blank"
                 rel="noreferrer"
                 className="bounce-btn"
+                key={idx}
               >
                 <i className="fas fa-code" />
                 {name}

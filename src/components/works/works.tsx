@@ -3,6 +3,8 @@ import React, { useContext } from "react";
 import ReservawebImg from "../../assets/img/reservaweb.png";
 import { ReferencesContext } from "../../context/references";
 import RevealDiv from "../RevealDiv";
+import ReactLogo from "../../assets/img/logo-react.png";
+import FirebaseLogo from "../../assets/img/logo-firebase.png";
 
 import "./works.scss";
 
@@ -24,8 +26,8 @@ const Works: React.FC = () => {
           <div className="work-info">
             <h3>ReservaWeb</h3>
             <div className="technologies">
-              <i className="fab fa-js"></i>
-              <i className="fab fa-react"></i>
+              <img src={ReactLogo} alt="react logo" />
+              <img src={FirebaseLogo} alt="firebase logo" />
             </div>
             <a
               href="https://reservaweb.net"

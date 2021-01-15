@@ -26,6 +26,13 @@
       font-size: 2rem;
     }
 
+    p {
+      padding: 0 1rem;
+      font-size: 1.4rem;
+      text-align: center;
+      color: gray;
+    }
+
     button {
       border-radius: 0.5rem;
       padding: 1rem;
@@ -53,15 +60,22 @@
 
     &:nth-child(2n) {
       flex-direction: row-reverse;
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
 
       img {
         grid-column: 2 / 3;
         grid-row: 1 / 2;
       }
+    }
 
-      .project-item {
-        grid-column: 1 / 2;
-        grid-row: 1 / 2;
+    .project-info {
+      h3 {
+        font-size: 2.3rem;
+      }
+
+      p {
+        font-size: 1.8rem;
       }
     }
   }

@@ -12,7 +12,11 @@ const useForm = (initialState: any) => {
     }));
   };
 
-  return [data, handleChange];
+  const clearForm = () => {
+    setData(initialState);
+  };
+
+  return [data, handleChange, clearForm];
 };
 
 export default useForm;

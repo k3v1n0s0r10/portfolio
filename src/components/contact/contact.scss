@@ -46,7 +46,8 @@
           border: 0.5px solid gray;
         }
 
-        &:focus {
+        &:focus,
+        &:valid {
           border: 2px solid var(--main-color);
         }
 

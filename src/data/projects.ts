@@ -22,7 +22,7 @@ export const ProjectsData: Array<ProjectItemInterface> = [
   {
     name: "PostMedia",
     img: PostMedia,
-    description: "In this app you could die",
+    description: "App where you can share your thougths",
     techs: [ReactLogo, ExpressLogo, GraphQLLogo, MongoDBLogo],
     demo: "https://kdev-postmedia.netlify.app/",
     code: [
@@ -39,7 +39,8 @@ export const ProjectsData: Array<ProjectItemInterface> = [
   {
     name: "Realtime Chat",
     img: ChatApp,
-    description: "In this app you could die",
+    description:
+      "App to enter chat rooms open to everyone, messages are not stored",
     techs: [ReactLogo, SocketIOLogo, ExpressLogo],
     demo: "https://kdev-chat.netlify.app/",
     code: [
@@ -56,7 +57,7 @@ export const ProjectsData: Array<ProjectItemInterface> = [
   {
     name: "Bienes Raices",
     img: Bienes,
-    description: "In this app you could die",
+    description: "Landing page to rent houses and apartments",
     techs: [HTMLLogo, CSSLogo],
     demo: "https://kdev-bienes.netlify.app/",
     code: [
@@ -69,7 +70,7 @@ export const ProjectsData: Array<ProjectItemInterface> = [
   {
     name: "Quote Generator",
     img: Quote,
-    description: "In this app you could die",
+    description: "Share random quotes on your twitter feed",
     techs: [HTMLLogo, CSSLogo, JSLogo],
     demo: "https://kdev-quote.netlify.app/",
     code: [
