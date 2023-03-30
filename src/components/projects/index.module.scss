@@ -1,0 +1,121 @@
+.projectsSection {
+  min-height: 100vh;
+  overflow: hidden;
+  background-image: url(../../assets/img/projects-background.jpg);
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .cover {
+    overflow: hidden;
+    background-color: rgba(33, 33, 41, 0.89);
+    min-height: 100vh;
+    padding-bottom: 10rem;
+
+    h2 {
+      color: white;
+    }
+
+    .projectsContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .projectsSection {
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+
+    .cover {
+      h2 {
+        margin-top: 15rem;
+      }
+    }
+  }
+}
+
+.projectItem {
+  background-color: white;
+  overflow: hidden;
+  margin: 1rem;
+  height: 50vh;
+  width: 80vw;
+  max-width: 68rem;
+  border-radius: 1rem;
+
+  display: grid;
+  grid-template-rows: 50% 50%;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .projectInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+
+    h3 {
+      font-size: 2rem;
+    }
+
+    p {
+      padding: 0 1rem;
+      font-size: 1.4rem;
+      text-align: center;
+      color: gray;
+    }
+
+    button {
+      border-radius: 0.5rem;
+      padding: 1rem;
+      width: 100%;
+      color: white;
+      background-color: var(--main-color);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .projectItem {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+    height: 30vh;
+    min-height: 30rem;
+    min-width: 70rem;
+    margin: 2rem 0;
+
+    &:last-child {
+      margin-bottom: 10rem;
+    }
+
+    &:nth-child(2n) {
+      flex-direction: row-reverse;
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+
+      img {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+    }
+
+    .projectInfo {
+      h3 {
+        font-size: 2.3rem;
+      }
+
+      p {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}

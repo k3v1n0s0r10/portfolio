@@ -1,0 +1,153 @@
+.customInput {
+  position: relative;
+  width: 100%;
+  height: 8rem;
+  overflow: hidden;
+  background-color: transparent;
+
+  & input {
+    width: 100%;
+    height: 100%;
+    padding-top: 4.5rem;
+    border: none;
+    outline: none;
+    font-size: 1.6rem;
+    color: gray;
+    background-color: transparent;
+
+    &[type="password"] {
+      letter-spacing: 5px;
+    }
+
+    &:invalid + label span {
+      transform: translateY(-150%);
+      font-size: 1.8rem;
+      color: red;
+    }
+
+    &:invalid + label::after {
+      transform: translateX(0%);
+      border-color: red;
+    }
+
+    &[value=""] + label::after {
+      transform: translateX(-150%);
+      border-color: var(--main-color);
+    }
+
+    &[value=""] + label span {
+      transform: translateY(0%);
+      color: gray;
+      font-size: 2.5rem;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 100px white inset !important;
+      box-shadow: 0 0 0 100px white inset !important ;
+      -webkit-text-fill-color: gray;
+    }
+
+    &:focus + label span,
+    &:valid + label span {
+      transform: translateY(-150%);
+      font-size: 1.8rem;
+      color: var(--main-color);
+    }
+
+    &:focus + label::after,
+    &:valid + label::after {
+      transform: translateX(0%);
+    }
+  }
+
+  & label {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    bottom: 0%;
+    pointer-events: none;
+    border-bottom: 1px solid gray;
+    font-size: 4rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0%;
+      height: 100%;
+      width: 100%;
+      border-bottom: 3px solid var(--main-color);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+
+    & span {
+      position: absolute;
+      bottom: 1%;
+      left: 0%;
+      color: gray;
+      transition: transform 0.3s, font-size 0.3s;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .customFormContainer {
+    width: 100%;
+    height: 6rem;
+    margin: 2rem 0;
+
+    & input {
+      font-size: 1.6rem;
+      padding-top: 2.2rem;
+      max-width: 90vw;
+
+      &:invalid + .label-name .content-name {
+        transform: translateY(-150%);
+        font-size: 1.5rem;
+        color: red;
+      }
+
+      &:invalid + .label-name::after {
+        transform: translateX(0%);
+        border-color: red;
+      }
+
+      &[value=""] + .label-name::after {
+        transform: translateX(-150%);
+        border-color: #e88a12;
+      }
+
+      &[value=""] + .label-name .content-name {
+        transform: translateY(0%);
+        color: gray;
+        font-size: 2rem;
+      }
+
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 100px white inset !important;
+        box-shadow: 0 0 0 100px white inset !important ;
+        -webkit-text-fill-color: gray;
+      }
+
+      &:focus + .label-name .content-name,
+      &:valid + .label-name .content-name {
+        transform: translateY(-150%);
+        font-size: 1.5rem;
+        color: #e88a12;
+      }
+
+      &:focus + .label-name::after,
+      &:valid + .label-name::after {
+        transform: translateX(0%);
+      }
+    }
+  }
+}

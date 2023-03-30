@@ -1,0 +1,69 @@
+:root {
+  --main-color: rgb(33, 33, 41);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: inherit;
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+input,
+button,
+a,
+textarea,
+label {
+  font-family: Ubuntu;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+.App {
+  background-color: rgb(243, 243, 243);
+
+  h2 {
+    color: rgb(33, 33, 41);
+    font-size: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+}
+
+.bounceBtn {
+  transition: transform 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1) !important;
+  }
+
+  &:active {
+    transform: scale(0.9) !important;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .App {
+    & h2 {
+      font-size: 3rem;
+      margin: 3rem 0;
+    }
+  }
+}

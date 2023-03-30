@@ -1,0 +1,132 @@
+.projectModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(33, 33, 41, 0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+
+  .modalContainer {
+    position: relative;
+    height: 90%;
+    width: 90%;
+    border-radius: 1rem;
+    background-color: var(--main-color);
+    box-shadow: 0px 0px 5px #ffffff49;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-rows: 50% 50%;
+
+    .closeBtn {
+      position: absolute;
+      top: 1%;
+      right: 3%;
+      font-size: 2rem;
+      transition: transform 0.2s;
+      color: gray;
+
+      &:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+
+    .projectModalInfo {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      overflow: hidden;
+
+      h3 {
+        color: white;
+        text-align: center;
+        font-size: 2.5rem;
+      }
+
+      p {
+        color: white;
+        font-size: 1.6rem;
+        text-align: center;
+        padding: 1rem 6rem;
+      }
+
+      .techs {
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+
+        img {
+          height: 5vh;
+          width: auto;
+        }
+      }
+
+      .buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+
+        a {
+          flex: 1;
+          padding: 2rem 1rem;
+          text-align: center;
+          margin: 1rem;
+          border-radius: 1rem;
+          background-color: gray;
+          color: white;
+          font-size: 1.4rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          i {
+            font-size: 2rem;
+          }
+
+          &:first-child {
+            background-color: #3784e9;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .projectModal {
+    .modalContainer {
+      height: 60vh;
+      min-height: 50rem;
+      grid-template-rows: 100%;
+      grid-template-columns: 50% 50%;
+
+      .closeBtn {
+        top: 2%;
+        right: 2%;
+      }
+
+      .projectModalInfo {
+        .buttons {
+          a {
+            i {
+              margin-right: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
